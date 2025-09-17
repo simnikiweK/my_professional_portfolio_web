@@ -1,0 +1,98 @@
+<!--Instruct the browser to parse the document as HTML5, preventing inconsistent behavior and layout issues caused by older rendering modes. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="IMG_0754.JPG" alt="Profile Picture" id="profile-pic">
+            </div>
+            <div class="profile-info">
+                <h1>Simnikiwe Khonto</h1>
+                <h2>Cloud Support Engineer I</h2>
+                <div class="social-links">
+                    <a href="http://linkedin.com/in/simnikiwe-khonto-4b8816127" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/simnikiweK" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="download-cv">
+                    <button onclick="downloadCV()" class="download-btn">
+                        <i class="fas fa-download"></i> Download CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <button class="nav-btn active" onclick="showSection('about')">About</button>
+        <button class="nav-btn" onclick="showSection('experience')">Experience</button>
+        <button class="nav-btn" onclick="showSection('skills')">Skills</button>
+        <button class="nav-btn" onclick="showSection('education')">Education</button>
+        <button class="nav-btn" onclick="showSection('contact')">Contact</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Me Section -->
+        <section id="about" class="section active">
+            <h2>About Me</h2>
+            <p id="bio">Loading...</p>
+            <div class="quick-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>CT, SA</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>example@gmail.com</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Work Experience</h2>
+            <div id="experience-list"></div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-container" id="skills-list"></div>
+        </section>
+
+         <!-- Education Section -->
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div id="education-list"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact Me For Job Opportinities</h2>
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Simnikiwe Khonto. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
